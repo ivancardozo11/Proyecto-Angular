@@ -1,4 +1,5 @@
 import {Injectable} from "@angular/core";
+import { AngularFirestore } from "@angular/fire/firestore";
 @Injectable()
 export class LugaresService{
     lugares:any = [
@@ -9,7 +10,7 @@ export class LugaresService{
         {id: 5, plan: 'pagado', cercania: 3, distancia: 35, active: true, nombre:'Hotel la Gracia'},
         {id: 6, plan: 'gratuito', cercania: 3, distancia: 120, active: false, nombre:'Zapatería el Clavo'},
     ];
-
+constructor(private afDB:AngularFirestore){}
     // Aca nos conectamos con la base de datos.
     public getLugares(){
         return this.lugares;
@@ -21,5 +22,6 @@ export class LugaresService{
         console.log(lugar);
         lugar.id = Date.now();
         this.lugares.push(lugar);
+         this.afDB.collection('lugares').doc('1').set(lugar); 
     }
 }
