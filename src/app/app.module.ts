@@ -13,7 +13,9 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { LugaresService } from './services/lugares.service';
 import { CrearComponent } from './crear/crear.component';
 import { AngularFireModule} from 'angularfire2';
-import {AngularFireDatabaseModule} from '@angular/database';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import {AngularFireAuthModule} from "angularfire2/auth";
 
 const appRoutes: Routes = [
@@ -39,7 +41,8 @@ export const firebaseConfig = {
     DetalleComponent,
     LugaresComponent,
     ContactoComponent,
-    CrearComponent
+    CrearComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -48,9 +51,11 @@ export const firebaseConfig = {
       apiKey: 'AIzaSyD13zATHhMoZlzi9FYJr17MSff79h5tlAg'
     }),BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
+
   ],
   providers: [LugaresService],
   bootstrap: [AppComponent]
