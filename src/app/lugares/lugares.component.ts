@@ -11,8 +11,7 @@ export class LugaresComponent {
   lat:number = -34.6080556;
   lng:number = -58.3724665;
   lugares = null;
-  constructor(private lugaresService: LugaresService){
-    this.lugares = lugaresService.getLugares();
-
-  }
+  constructor(private lugaresService:LugaresService){
+      this.lugares = lugaresService.getLugares();
+    }
 }

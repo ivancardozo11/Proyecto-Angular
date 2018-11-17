@@ -11,6 +11,9 @@ lugar:any = {};
 constructor(private lugaresService: LugaresService){
 }
  guardarLugar(lugar){
+   this.lugar.id =  Date.now();
   this.lugaresService.guardarLugar(this.lugar);
+  alert('Negocio guardado con exito');
+  this.lugar = {};
    }
 }
