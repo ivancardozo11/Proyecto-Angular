@@ -39,7 +39,7 @@ export class LugaresService{
 
     }
  public getLugar(id){
-   return this.afDB.collection('lugares').doc(id).set(lugar);
+   // return this.afDB.collection('lugares').doc(id).set(lugar);
  }
 
 

@@ -1,7 +1,8 @@
-<agm-map [latitude]="lat" [longitude]="lng">
-    <agm-marker  *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="13">
+    <agm-marker *ngFor="let lugar of lugares" [latitude]="lugar.lat" [longitude]="lugar.lng"></agm-marker>
 </agm-map>
 <hr />
+<div id="cuadrado" [@contenedorAnimable]="state"></div>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -9,7 +10,13 @@
             <a class="btn btn-primary" routerLink="/crear/new">Crear Nuevo Negocio</a>
             <ul class="list-group">
                 <ng-container *ngFor="let lugar of lugares">
-                    <a routerLink="/crear/{{lugar.id}}" ><li  class="list-group-item">{{lugar.nombre}}</li></a>
+
+                        <li class="list-group-item">
+                            <a routerLink="/crear/{{lugar.id}}"><h3>{{lugar.nombre}}</h3></a>
+                            <br />
+                            <small>Creado: {{lugar.id | date:'mediumTime' | uppercase}}</small>
+                            <p [innerHtml]="lugar.descripcion | linkifystr"></p>
+                        </li>
                 </ng-container>
             </ul>
         </div>

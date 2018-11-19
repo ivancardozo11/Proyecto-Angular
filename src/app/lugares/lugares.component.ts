@@ -13,5 +13,5 @@ export class LugaresComponent {
   lugares = null;
   constructor(private lugaresService:LugaresService){
       this.lugares = lugaresService.getLugares();
-    }
+    };
 }
