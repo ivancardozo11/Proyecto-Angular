@@ -19,7 +19,6 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import {AngularFireAuthModule} from "angularfire2/auth";
 import { HttpClientModule } from '@angular/common/http';
 import {LinkifystrPipe} from './pipe/linkifystr.pipe';
-
 const appRoutes: Routes = [
   {path:"", component: LugaresComponent},
   {path:"lugares", component: LugaresComponent},
@@ -27,14 +26,7 @@ const appRoutes: Routes = [
   {path:"contacto", component: ContactoComponent},
   {path:"crear/:id", component: CrearComponent}
 ];
-export const firebaseConfig = {
 
-  apiKey: "AIzaSyDmIjBYqhpY1C84SPjvMv_fb4RN0QC8pIY",
-  authDomain: "square-222302.firebaseapp.com",
-  databaseURL: "https://square-222302.firebaseio.com",
-  storageBucket: "square-222302.appspot.com",
-  messagingSenderId: "489584955398"
-};
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +50,8 @@ export const firebaseConfig = {
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,// imports firebase/storage only needed for storage features
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [LugaresService],
   bootstrap: [AppComponent]
