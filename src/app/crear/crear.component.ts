@@ -12,7 +12,8 @@ lugar:any = {};
 constructor(private lugaresService: LugaresService, private route: ActivatedRoute){
   this.id = this.route.snapshot.params['id'];
   if(this.id != 'new'){
-    this.lugaresService.getLugar(this.id).subscribe(lugar =>{
+    this.lugaresService.getLugar(this.id)
+    .subscribe(lugar =>{
         this.lugar = lugar;
     });
   }
