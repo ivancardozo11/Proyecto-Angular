@@ -10,13 +10,13 @@ export class CrearComponent {
 lugar:any = {};
   id:any = null;
 constructor(private lugaresService: LugaresService, private route: ActivatedRoute){
-  this.id = this.route.snapshot.params['id'];
-  if(this.id != 'new'){
-    this.lugaresService.getLugar(this.id)
-    .subscribe(lugar =>{
-        this.lugar = lugar;
-    });
-  }
+  // this.id = this.route.snapshot.params['id'];
+  // if(this.id != 'new'){
+  //   this.lugaresService.getLugar(this.id)
+  //   .subscribe(lugar =>{
+  //       this.lugar = lugar;
+  //   });
+  // }
 }
  guardarLugar(lugar){
    var direccion = this.lugar.calle+','+this.lugar.ciudad+','+this.lugar.pais;

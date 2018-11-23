@@ -18,7 +18,17 @@
       </li>
 
       <li class="text" *ngFor="let item of items | async">
-    {{item.name}}
+        {{item.name}}
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item"><a class="nav-link" routerLink="/login">
+        Login
+      </a>
+      </li>
+      <li class="nav-item"><a class="nav-link" routerLink="/registro">
+        Registro
+      </a>
       </li>
     </ul>
 

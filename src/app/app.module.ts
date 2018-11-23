@@ -19,12 +19,17 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import {AngularFireAuthModule} from "angularfire2/auth";
 import { HttpClientModule } from '@angular/common/http';
 import {LinkifystrPipe} from './pipe/linkifystr.pipe';
+import {LoginComponent} from './login/login.component';
+import {RegistroComponent} from './registro/registro.component';
+import {AutorizacionService} from "./services/autorizacion.service";
 const appRoutes: Routes = [
   {path:"", component: LugaresComponent},
   {path:"lugares", component: LugaresComponent},
   {path:"detalle/:id", component: DetalleComponent},
   {path:"contacto", component: ContactoComponent},
-  {path:"crear/:id", component: CrearComponent}
+  {path:"crear/:id", component: CrearComponent},
+  {path:"login", component: LoginComponent},
+  {path:"registro", component: RegistroComponent},
 ];
 
 @NgModule({
@@ -36,7 +41,9 @@ const appRoutes: Routes = [
     LugaresComponent,
     ContactoComponent,
     CrearComponent,
-    LinkifystrPipe
+    LinkifystrPipe,
+    LoginComponent,
+    RegistroComponent
 
   ],
   imports: [
@@ -53,7 +60,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     BrowserAnimationsModule
   ],
-  providers: [LugaresService],
+  providers: [LugaresService , AutorizacionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
