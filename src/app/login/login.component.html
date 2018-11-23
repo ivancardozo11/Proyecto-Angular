@@ -3,15 +3,15 @@
 		<div class=" col-4">
 			<div class="form-group">
 				<label for="email">Email</label>
-				<input type="email"class="form-control"id="email">
+				<input type="email"class="form-control"id="email" [(ngModel)]="loginParams.email" />
 			</div>
       <br />
 			<div class="form-group">
-				<label for="email">Email</label>
-				<input type="email"class="form-control"id="email">
+				<label for="password">Password</label>
+				<input type="password"class="form-control"id="email" [(ngModel)]="loginParams.password" />
 			</div>
       <hr />
-      <a  class="btn btn-primary btn-block" style="color: white;">Login</a>
+      <a  class="btn btn-primary btn-block" style="color: white;" (click)="login()">Login</a>
       <a  class="btn btn-light btn-block">Cancelar</a>
 		</div>
 	</div>
