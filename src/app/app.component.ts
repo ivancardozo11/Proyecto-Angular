@@ -22,6 +22,10 @@ export class AppComponent {
       this.loggedIn = false;
     })
   }
+  logout(){
+    this.autorizacionService.logout();
+    
+  }
   // items: Observable<any[]>;
   // constructor(db: AngularFirestore) {
   //   this.items = db.collection('items').valueChanges();

@@ -14,4 +14,7 @@ constructor(private autorizacionService: AutorizacionService){
 login(){
   this.autorizacionService.login(this.loginParams.email, this.loginParams.password);
   }
+  facebookLogin(){
+    this.autorizacionService.facebookLogin();
+  }
 }

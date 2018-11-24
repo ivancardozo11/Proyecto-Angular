@@ -21,13 +21,21 @@
         {{item.name}}
       </li>
     </ul>
+    <!-- LOGIN  -->
     <ul class="nav navbar-nav navbar-right "*ngIf="!loggedIn">
       <li class="nav-item"><a class="nav-link" routerLink="/login"> Login </a>
       </li>
       <li class="nav-item"><a class="nav-link" routerLink="/registro"> Registro </a>
       </li>
     </ul>
+    <!--/  LOGIN  -->
 
+    <!-- LOGOUT -->
+    <ul class="nav navbar-nav navbar-right " *ngIf="loggedIn">
+      <li class="nav-item"><a class="nav-link" routerLink="/login" (click)="logout()"> Logout </a>  </li>
+
+    </ul>
+    <!-- /  LOGOUT -->
   </div>
 </nav>
 <!--/barra de navegacion  -->

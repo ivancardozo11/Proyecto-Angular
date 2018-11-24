@@ -8,10 +8,11 @@
       <br />
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="password"class="form-control"id="email" [(ngModel)]="loginParams.password" />
+				<input type="password"class="form-control"id="password" [(ngModel)]="loginParams.password" />
 			</div>
       <hr />
-      <a  class="btn btn-primary btn-block" style="color: white;" (click)="login()">Login</a>
+      <a  class="btn btn-warning btn-block" style="color: white;" (click)="login()">Login con Email!</a>
+      <a  class="btn btn-primary btn-block" style="color: white;" (click)="facebookLogin()">Login con Facebook!</a>
       <a  class="btn btn-light btn-block">Cancelar</a>
 		</div>
 	</div>
