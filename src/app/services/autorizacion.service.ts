@@ -51,4 +51,7 @@ export class AutorizacionService{
     alert('Sesion Cerrada');
     this.router.navigate(['lugares']);
   };
+  public getUser(){
+    return this.angularFireAuth.auth;
+  }
 }
