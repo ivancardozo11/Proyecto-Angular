@@ -21,9 +21,12 @@
 
     <div class="well">
       <form>
-        <h3>Buscar direccion en google maps</h3>
-        <input [formControl]="searchField" class="form-control" />
+        <label>Buscar direccion en google maps</label>
+        <input type="text" [formControl]="searchField" class="form-control" />
       </form>
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let result of results$ | async" (click)="seleccionarDireccion()">{{result.formatted_address}}</li>
+      </ul>
     </div>
 
     <label>Calle y Número </label>

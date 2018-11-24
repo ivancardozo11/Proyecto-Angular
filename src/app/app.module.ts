@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AgmCoreModule } from '@agm/core'; //maps
 import { ResaltarDirective } from './directives/resaltar.directive';
 import { ContarClicksDirective } from './directives/contar-clicks.directive';
@@ -60,7 +60,8 @@ const appRoutes: Routes = [
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule,// imports firebase/storage only needed for storage features
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [LugaresService , AutorizacionService, MyGuard],
   bootstrap: [AppComponent]

@@ -26,7 +26,7 @@ constructor(private lugaresService: LugaresService, private route: ActivatedRout
   const URL = 'https://maps.google.com/maps/api/geocode/json';
   // Este metodos nos va a ayudar a saber en que momento se estan cambiando
   this.searchField = new FormControl();
-  this.results$= this.searchField.valueChanges
+  this.results$= this.searchField.valueChanges.debounceTime(500)
   .switchMap(query => this.httpClient.get(`${URL}?address=${query}`))
   .map(response => response.json())
   .map(response => response.results);
