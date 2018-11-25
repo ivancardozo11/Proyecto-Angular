@@ -16,20 +16,20 @@ lugar:any = {};
   results$ : Observable<any>;
   private searchField: FormControl;
 constructor(private lugaresService: LugaresService, private route: ActivatedRoute, private httpClient :HttpClient){
-  this.id = this.route.snapshot.params['id'];
-  if(this.id != 'new'){
-    this.lugaresService.getLugar(this.id)
-    .subscribe(lugar =>{
-        this.lugar = lugar;
-    });
-  }
-  const URL = 'https://maps.google.com/maps/api/geocode/json';
-  // Este metodos nos va a ayudar a saber en que momento se estan cambiando
-  this.searchField = new FormControl();
-  this.results$= this.searchField.valueChanges.debounceTime(500)
-  .switchMap(query => this.httpClient.get(`${URL}?address=${query}`))
-  .map(response => response.json())
-  .map(response => response.results);
+  // this.id = this.route.snapshot.params['id'];
+  // if(this.id != 'new'){
+  //   this.lugaresService.getLugar(this.id)
+  //   .subscribe(lugar =>{
+  //       this.lugar = lugar;
+  //   });
+  // }
+  // const URL = 'https://maps.google.com/maps/api/geocode/json';
+  // // Este metodos nos va a ayudar a saber en que momento se estan cambiando
+  // this.searchField = new FormControl();
+  // this.results$= this.searchField.valueChanges.debounceTime(500)
+  // .switchMap(query => this.httpClient.get(`${URL}?address=${query}`))
+  // .map(response => response.json())
+  // .map(response => response.results);
 }
  guardarLugar(lugar){
    var direccion = this.lugar.calle+','+this.lugar.ciudad+','+this.lugar.pais;
